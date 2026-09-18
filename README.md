@@ -5,8 +5,8 @@ PyTorch implementations and experiments for **signed geometric-mean pooling** (G
 For a pooling window $W = \{x_1, \ldots, x_k\}$, GMP is
 
 $$
-\operatorname{GMP}(W) =
-\left(\prod_{i=1}^{k}\operatorname{sign}(x_i)\right)
+\mathrm{GMP}(W) =
+\left(\prod_{i=1}^{k}\mathrm{sign}(x_i)\right)
 \exp\left(
   \frac{1}{k}\sum_{i=1}^{k}
   \log\left(\max\left(|x_i|, \varepsilon\right)\right)
