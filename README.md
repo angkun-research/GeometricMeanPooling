@@ -2,14 +2,16 @@
 
 PyTorch implementations and experiments for **signed geometric-mean pooling** (GMP), a parameter-free pooling operation designed for signals with multiplicative structure.
 
-For a pooling window \(W = \{x_1, \ldots, x_k\}\), GMP is
+For a pooling window $W = \{x_1, \ldots, x_k\}$, GMP is
 
-\[
+$$
 \operatorname{GMP}(W) =
 \left(\prod_{i=1}^{k}\operatorname{sign}(x_i)\right)
-\exp\left(\frac{1}{k}\sum_{i=1}^{k}
-\log\left(\max\left(|x_i|, \varepsilon\right)\right)\right).
-\]
+\exp\left(
+  \frac{1}{k}\sum_{i=1}^{k}
+  \log\left(\max\left(|x_i|, \varepsilon\right)\right)
+\right).
+$$
 
 The implementation computes the magnitude in log space for numerical stability and preserves the product of the input signs. It can be used as either a local sliding-window operator or a global pooling layer. This repository compares that multiplicative inductive bias with average and max pooling on synthetic sequences, image classification, iterative coarse-graining, and molecular lipophilicity regression.
 
